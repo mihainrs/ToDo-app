@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>todo-app</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
+    <div class="main-container">
+        <section class="top-part">
+            <h1>T O D O</h1>
+            <img src="images/icon-sun.svg" alt="sun">
+        </section>
+
+        <section class="new-task">
+            <img src="images/icon-check.svg" alt="check">
+            <input type="text" placeholder="Create a new todo...">
+        </section>
+
+        <section class="task-list">
+            <div class="task">
+                <img src="images/icon-check.svg" alt="check">
+                <p class="task-text">Complete online JavaScript course</p>
+            </div>
+
+            <div class="task">
+                <img src="images/icon-check.svg" alt="check">
+                <p class="task-text">Jog around the park 3x</p>
+            </div>
+
+            <div class="task">
+                <img src="images/icon-check.svg" alt="check">
+                <p class="task-text">10 minutes meditation</p>
+            </div>
+
+            <div class="task">
+                <img src="images/icon-check.svg" alt="check">
+                <p class="task-text">Read for 1 hour</p>
+            </div>
+
+            <div class="task">
+                <img src="images/icon-check.svg" alt="check">
+                <p class="task-text">Pick up groceries</p>
+            </div>
+
+            <div class="task">
+                <img src="images/icon-check.svg" alt="check">
+                <p class="task-text">Complete Todo App on Frontend Mentor</p>
+            </div>
+        </section>
+
+        <section class="bottom-part">
+
+            <div class="items-left">
+                <p>5 items left</p>
+            </div>
+
+            <div class="filter">
+                <p class="all">All</p>
+                <p class="active">Active</p>
+                <p class="completed">Completed</p>
+            </div>
+
+            <div class="clear">
+                <p>Clear Completed</p>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <p>Drag and drop to reorder list</p>
+        </footer>
+    </div>
     <script src="scripts.js"></script>
 </body>
+
 </html>
