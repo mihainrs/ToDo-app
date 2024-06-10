@@ -1,9 +1,295 @@
 :root{
+    --BrightBlue: hsl(220, 98%, 61%);
+    /* --Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%) */
+    
+    
+    --VeryLightGray: hsl(0, 0%, 98%);
+    --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+    --LightGrayishBlue: hsl(233, 11%, 84%);
+    --DarkGrayishBlue: hsl(236, 9%, 61%);
+    --VeryDarkGrayishBlue1: hsl(235, 19%, 35%);
 
+    --VeryDarkBlue: hsl(235, 21%, 11%);
+    --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+    --LightGrayishBlue: hsl(234, 39%, 85%);
+    --LightGrayishBlue/*(hover)*/: hsl(236, 33%, 92%);
+    --DarkGrayishBlue: hsl(234, 11%, 52%);
+    --VeryDarkGrayishBlue2: hsl(233, 14%, 35%);
+    --VeryDarkGrayishBlue3: hsl(237, 14%, 26%);
 }
+
 
 body{
+    position:relative;
+    margin:auto;
+    max-width:100vw;
     display:flex;
     justify-content: center;
+    background-color: var(--VeryDarkBlue);
 }
 
+/* setting the background picture */
+
+.bgpic{
+    position:absolute;
+    width:100wv;
+    z-index: -1;
+    min-height: 20vh;
+}
+
+/* the big container */
+.main-container{
+    display:flex;
+    justify-self:center;
+    flex-direction: column;
+}
+
+/* the title and theme changer */
+.top-part{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:30rem;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size:2rem;
+    color:var(--VeryLightGray);
+}
+
+.top-part>img{
+    max-width:50%;
+    max-height:50%;
+}
+
+/* the list */
+
+.todo{
+ display:flex;
+ background-color: var(--VeryDarkDesaturatedBlue);
+ justify-content: left;
+ align-items: center;
+ border-bottom:1px solid var(--VeryDarkGrayishBlue3);
+ font-size:18px;
+ font-family: "Josefin Sans", sans-serif;
+ font-optical-sizing: auto;
+ font-weight: 400;
+ font-style: normal;
+ padding:0.5em 2em;
+ gap:1em;
+ color:var(--LightGrayishBlue);
+}
+
+/* list input */
+
+.todo> input{
+    background-color: var(--VeryDarkDesaturatedBlue);
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size:1.3rem;
+    border:0;
+    padding:0.8em 5em 0.8em 0;
+    color:var(--LightGrayishBlue);
+  }
+
+  
+.todo:nth-child(1){
+    margin-bottom:1.5em;
+    border-radius:8px;
+}
+
+/* checkmark */
+
+.todo:nth-child(2){
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+
+.todo>img{
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border:1px solid var(--VeryDarkGrayishBlue3);
+    border-radius: 50%;
+    padding:0.5em;
+}
+
+.todo>p{
+    text-decoration:line-through;
+    color:var(--VeryDarkGrayishBlue2)
+}
+
+/* the bottom filters */
+
+.bottom-part{
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--VeryDarkDesaturatedBlue);
+    padding:0 2em;
+    color:var(--VeryDarkGrayishBlue2);
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border-bottom-right-radius:8px;
+    border-bottom-left-radius:8px;
+}
+
+.filters{
+  display:flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.filters2{
+    display:none;
+}
+
+.filters>p:hover{
+    color:var(--BrightBlue);
+}
+
+/* footer */
+
+.footer{
+    display:flex;
+    justify-content: center;
+    margin-top:2em;
+    padding-right:2em;
+    display:flex;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color:var(--VeryDarkGrayishBlue2);
+}
+
+/* mobile time */
+
+@media only screen and (max-width:426px){
+
+
+    .top-part{
+        gap:5em;
+    }
+
+    .main-container{
+        display:flex;
+        justify-self:center;
+        flex-direction: column;
+    }
+    
+    /* the list */
+    
+    .todo{
+     display:flex;
+     background-color: var(--VeryDarkDesaturatedBlue);
+     align-items: center;
+     border-bottom:1px solid var(--VeryDarkGrayishBlue3);
+     font-size:1rem;
+     font-family: "Josefin Sans", sans-serif;
+     font-optical-sizing: auto;
+     font-weight: 400;
+     font-style: normal;
+     padding: 0.5em;
+     gap:1em;
+     color:var(--LightGrayishBlue);
+    }
+
+    .todo::after{
+        content:url(images/icon-cross.svg);
+        display:flex;
+        justify-content: right;
+        align-items: end;
+        
+    }
+    
+    /* list input */
+    
+    .todo> input{
+        background-color: var(--VeryDarkDesaturatedBlue);
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size:1rem;
+        border:0;
+        padding:0.8em 6em 0.8em 0;
+        color:var(--LightGrayishBlue);
+      }
+    
+      
+    .todo:nth-child(1){
+        margin-bottom:1.5em;
+        border-radius:8px;
+    }
+    
+    /* checkmark */
+    
+    .todo:nth-child(2){
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+    }
+    
+    .todo>img{
+        background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        border:1px solid var(--VeryDarkGrayishBlue3);
+        border-radius: 50%;
+        padding:0.5em;
+    }
+    
+    .todo>p{
+        text-decoration:line-through;
+        color:var(--VeryDarkGrayishBlue2);
+    }
+    
+    /* the bottom filters */
+    
+    .bottom-part{
+        display:flex;
+        justify-content: space-between;
+        background-color: var(--VeryDarkDesaturatedBlue);
+        padding:0 2em;
+        color:var(--VeryDarkGrayishBlue2);
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        border-bottom-right-radius:8px;
+        border-bottom-left-radius:8px;
+    }
+    
+    .filters{
+      display:none;
+    }
+
+    .filters2{
+        display:flex;
+        justify-content: center;
+        background-color: var(--VeryDarkDesaturatedBlue);
+        margin-top:2em;
+    }
+    
+    .filters>p:hover{
+        color:var(--BrightBlue);
+    }
+
+
+    
+    /* footer */
+    
+    .footer{
+        display:flex;
+        justify-content: center;
+        margin-top:2em;
+        padding-right:2em;
+        display:flex;
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        color:var(--VeryDarkGrayishBlue2);
+    }
+
+}

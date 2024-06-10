@@ -6,10 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todo-app</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    
+
+    <picture class="bgpic">
+        <source media="(max-width: 600px)" srcset="images/bg-mobile-dark.jpg">
+        <source media="(min-width: 601px)" srcset="images/bg-desktop-dark.jpg">
+        <img class="background" src="images/bg-desktop-light.jpg" alt="light background">
+    </picture>
+
+    <div class="main-container">
+
+        <section class="top-part">
+            <h1>T O D O</h1>
+            <img src="images/icon-sun.svg">
+        </section>
+
+        <section class="todos-container">
+
+            <div class="todo">
+                <img src="images/icon-check.svg">
+                <input type="text" placeholder="Create a new todo...">
+            </div>
+
+            <div class="todo">
+                <img src="images/icon-check.svg">
+                <p>Complete online JavaScript course</p>
+            </div>
+
+            <div class="todo">
+                <img src="images/icon-check.svg">
+                <p>Jog around the park 3x</p>
+            </div>
+
+            <div class="todo">
+                <img src="images/icon-check.svg">
+                <p>10 minutes meditation</p>
+            </div>
+
+            <div class="todo">
+                <img src="images/icon-check.svg">
+                <p>Read for 1 hour</p>
+            </div>
+
+            <div class="todo">
+                <img src="images/icon-check.svg">
+                <p>pick up groceries</p>
+            </div>
+
+            <div class="todo">
+                <img src="images/icon-check.svg">
+                <p>Complete Todo App on Frontend Mentor</p>
+            </div>
+        </section>
+
+        <section class="bottom-part">
+            <p><span>0</span> items left</p>
+
+            <div class="filters">
+                <p>All</p>
+                <p>Active</p>
+                <p>Completed</p>
+            </div>
+
+            <p class="clear-completed">Clear Completed</p>
+        </section>
+
+        
+        <div class="filters2">
+            <p>All</p>
+            <p>Active</p>
+            <p>Completed</p>
+        </div>
+
+        <footer class="footer">
+            <p>Drag and drop to reorder list</p>
+        </footer>
+
+    </div>
     <script src="scripts.js"></script>
 </body>
 
