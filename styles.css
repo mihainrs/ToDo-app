@@ -26,6 +26,10 @@ body{
     background-color: var(--VeryDarkBlue);
 }
 
+p{
+    user-select: none;
+}
+
 /* setting the background picture */
 
 .bgpic{
@@ -115,7 +119,7 @@ body{
   }
 
 
-/* checkmark */
+/* checkmark and X*/
 
 .border {
     padding: 0.5rem;
@@ -124,7 +128,16 @@ body{
     display:none;
   }
 
+  .input-circle{
+    display:block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--VeryDarkGrayishBlue3);
+    border-radius: 50%;
+  }
+
   .circle {
+    display:flex;
     width: 25px;
     height: 25px;
     border: 1px solid var(--VeryDarkGrayishBlue3);
@@ -132,7 +145,8 @@ body{
   }
 
   .circle:hover{
-    border:linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border:1px solid linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
   }
 
 .todo:nth-child(1){
@@ -144,6 +158,16 @@ body{
     color:var(--LightGrayishBlue2);
     font-size:18px;
 }
+
+.strike>p{
+    text-decoration:line-through;
+    color:var(--VeryDarkGrayishBlue2);
+}
+
+.todo>img{
+    display:none;
+}
+
 
 /* the bottom filters */
 
@@ -199,6 +223,8 @@ body{
     font-style: normal;
     color:var(--VeryDarkGrayishBlue2);
 }
+
+
 
 /* mobile time */
 

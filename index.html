@@ -29,58 +29,64 @@
 
 
         <div class="todo-input">
-            <div class="circle"></div>
+            <div class="input-circle" onclick="newTask()"></div>
             <input type="text" placeholder="Create a new todo...">
         </div>
 
         <section class="todos-container">
 
-            <div class="todo">
-                <div class="circle"></div>
-                <div class="border">
-                    <img src="images/icon-check.svg">
-                </div>
-                <p>Complete online JavaScript course</p>
+            <div class="todo isIdle">
+                    <div class="circle"></div>
+                    <div class="border">
+                        <img src="images/icon-check.svg">
+                    </div>
+                    <p>Complete online JavaScript course</p>
+                    <img class="ex" src="images/icon-cross.svg">
             </div>
 
-            <div class="todo">
+            <div class="todo isIdle" active>
                 <div class="circle"></div>
                 <div class="border">
                     <img src="images/icon-check.svg">
                 </div>
                 <p>Jog around the park 3x</p>
+                <img class="ex" src="images/icon-cross.svg">
             </div>
 
-            <div class="todo">
+            <div class="todo isIdle">
                 <div class="circle"></div>
                 <div class="border">
                     <img src="images/icon-check.svg">
                 </div>
                 <p>10 minutes meditation</p>
+                <img class="ex" src="images/icon-cross.svg">
             </div>
 
-            <div class="todo">
+            <div class="todo isIdle">
                 <div class="circle"></div>
                 <div class="border">
                     <img src="images/icon-check.svg">
                 </div>
                 <p>Read for 1 hour</p>
+                <img class="ex" src="images/icon-cross.svg">
             </div>
 
-            <div class="todo">
+            <div class="todo isIdle">
                 <div class="circle"></div>
                 <div class="border">
                     <img src="images/icon-check.svg">
                 </div>
                 <p>Pick up groceries</p>
+                <img class="ex" src="images/icon-cross.svg">
             </div>
 
-            <div class="todo">
+            <div class="todo isIdle">
                 <div class="circle"></div>
                 <div class="border">
                     <img src="images/icon-check.svg">
                 </div>
                 <p>Complete Todo App on Frontend Mentor</p>
+                <img class="ex" src="images/icon-cross.svg">
             </div>
         </section>
 
@@ -96,7 +102,7 @@
             <p class="clear-completed">Clear Completed</p>
         </section>
 
-        
+
         <div class="filters2" tabindex="1">
             <p>All</p>
             <p>Active</p>
