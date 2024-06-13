@@ -165,7 +165,7 @@ p{
 }
 
 .todo>img{
-    display:none;
+    display:flex;
 }
 
 
