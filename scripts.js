@@ -8,7 +8,6 @@ let check = document.querySelectorAll('.border');
 let ex = document.querySelectorAll('.ex');
 
 let draggable;
-
 let pointerStartX;
 let pointerStartY;
 
@@ -16,12 +15,12 @@ let items = [];
 
 const reorderedItems = [];
 
-let numVar = 0;
-numVar = todo.length;
+
 
 reOrder();
 delet();
 addCheckListeners();
+filters();
 
 //add a new task
 
@@ -54,18 +53,18 @@ function newTask() {
 
     taskContainer.className = "todo isIdle";
     container.appendChild(taskContainer);
-    numVar += 1;
+
     
     delet();
     addCheckListeners();
+    filters();
 }
-
 
 
 // add deletion button
 
 function delet() {
-    // Get current todo and ex elements
+    // Get current todo and ex 
     let todos = document.querySelectorAll('.todo');
     let crosses = document.querySelectorAll('.ex');
 
@@ -83,7 +82,8 @@ function delet() {
             });
 
             cross.addEventListener("click", () => {
-                todo.remove(); // Remove the todo item
+                todo.style.display="none"; // Remove the todo item
+                
             });
         }
     });
@@ -293,12 +293,14 @@ function reOrder() {
 
 }
 
+
 // check marks to tell completed tasks from incomplete
 
 function addCheckListeners() {
     let circles = document.querySelectorAll('.circle');
     let checks = document.querySelectorAll('.border');
     let todos = document.querySelectorAll('.todo');
+    
 
     circles.forEach((circle, i) => {
         circle.addEventListener("click", () => {
@@ -306,6 +308,7 @@ function addCheckListeners() {
                 circle.style.display = 'none';
                 checks[i].style.display = 'flex';
                 todos[i].classList.add("strike");
+               
             }
         });
     });
@@ -316,6 +319,7 @@ function addCheckListeners() {
                 circles[j].style.display = 'flex';
                 check.style.display = 'none';
                 todos[j].classList.remove("strike");
+               
             }
         });
     });
@@ -323,18 +327,112 @@ function addCheckListeners() {
 
 // task filters
 
-filters();
+
 
 function filters(){
 
     let allFliters = document.querySelectorAll(".All");
     let activeFilters = document.querySelectorAll('.Active');
     let completedFilters= document.querySelectorAll('.Completed');
+    let clearCompletedFilter = document.querySelector('.clear-completed');
+    let todos = document.querySelectorAll('.todo');
 
-    allFliters.forEach((allFilter, k) =>{
+
+    allFliters.forEach((allFilter,) =>{
        allFilter.addEventListener('click', ()=>{
-           console.log('Yeet');
+        todos.forEach((todo,) => {
+            if (todo) {
+                todo.style.display='flex';
+            }
+        });
        })
     })
 
+    activeFilters.forEach((activeFilter, ) =>{
+        activeFilter.addEventListener('click', ()=>{
+            todos.forEach((todo,) => {
+                if (todo.classList.contains("strike")) {
+                    todo.style.display='none';
+                } else
+                todo.style.display='flex';
+            });
+        })
+     })
+
+     completedFilters.forEach((completedFilter, ) =>{
+        completedFilter.addEventListener('click', ()=>{
+            todos.forEach((todo,) => {
+                if (todo.classList.contains("strike")) {
+                    todo.style.display='flex';
+                } else
+                todo.style.display='none';
+            });
+        })
+     })
+
+    clearCompletedFilter.addEventListener('click', ()=>{
+        todos.forEach((todo,) => {
+            if (todo.classList.contains("strike")) {
+                todo.remove();
+            }
+        })
+    })
+
 }
+
+
+// light theme
+
+function changeTheme(){
+    let themeChanger = document.querySelector('.theme-changer');
+    let themeCounter = 0;
+    let bgPic1 = document.getElementById('background1');
+    let bgPic2 = document.getElementById('background2');
+    let todos = document.querySelectorAll('.todo');
+    let todoInputContainer = document.querySelector('.todo-input');
+    let todoInput = document.querySelector('.textInput');
+    let bottomPart = document.querySelector('.bottom-part');
+    let wholeContainer = document.querySelector('.todos-container');
+
+    themeChanger.addEventListener('click', ()=>{
+        if(themeCounter === 0){
+        themeChanger.src = "images/icon-moon.svg";
+        themeCounter=1;
+        bgPic1.srcset="images/bg-mobile-light.jpg";
+        bgPic2.srcset="images/bg-desktop-light.jpg";
+       document.body.style.backgroundColor = 'var(--VeryLightGray)';
+       todoInputContainer.style.backgroundColor ='var(--VeryLightGray)';
+       todoInput.style.backgroundColor ='var(--VeryLightGray)';
+       bottomPart.style.backgroundColor ='var(--VeryLightGray)';
+       wholeContainer.style.boxShadow='1px 50px 25px gray';
+       
+
+       } else {
+
+        wholeContainer.style.boxShadow='1px 50px 25px black';
+        bottomPart.style.backgroundColor ='var(--VeryDarkDesaturatedBlue)';
+        todoInput.style.backgroundColor ='var(--VeryDarkDesaturatedBlue)';
+        todoInputContainer.style.backgroundColor ='var(--VeryDarkDesaturatedBlue)';
+       document.body.style.backgroundColor = 'var(--VeryDarkBlue)';
+       bgPic1.srcset="images/bg-mobile-dark.jpg";
+       bgPic2.srcset="images/bg-desktop-dark.jpg";
+       themeChanger.src = "images/icon-sun.svg"
+       themeCounter=0;
+    }
+       
+
+    })
+
+    themeChanger.addEventListener('click', ()=>{
+        todos.forEach((todo) => {
+            if(themeCounter===0){
+                todo.style.backgroundColor ='var(--VeryDarkDesaturatedBlue)';
+            } else
+            todo.style.backgroundColor ='var(--VeryLightGray)';
+           
+        })
+    })
+
+}
+
+changeTheme();

@@ -66,9 +66,14 @@ p{
 .top-part>img{
     max-width:50%;
     max-height:50%;
+    cursor: pointer;
 }
 
 /* the list */
+
+.todos-container{
+    box-shadow: 1px 50px 50px black;
+}
 
 .todo{
  display:flex;
@@ -165,7 +170,7 @@ p{
 }
 
 .todo>img{
-    display:flex;
+    display:none;
 }
 
 
